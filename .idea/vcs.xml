@@ -2,6 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="/mnt/92B242FAB242E279/projects/AndroidStudioProjects/WorkoutPlanReminder" vcs="Git" />
   </component>
 </project>
 
