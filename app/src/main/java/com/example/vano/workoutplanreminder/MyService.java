@@ -107,12 +107,12 @@ public class MyService extends Service {
 		Intent intentPrevious = new Intent(this, MyPreviousReceiver.class);
 		intentNext.putExtra(getString(R.string.flag), 1);
 		intentPrevious.putExtra(getString(R.string.flag), -1);
-		PendingIntent pendingIntentNext = PendingIntent.getBroadcast(this, 1, intentNext, 0);
+		PendingIntent pendingIntentNext = PendingIntent.getBroadcast(this, 1, intentNext, PendingIntent.FLAG_UPDATE_CURRENT);
 
-		PendingIntent pendingIntentPrevious = PendingIntent.getBroadcast(this, 1, intentPrevious, 0);
+		PendingIntent pendingIntentPrevious = PendingIntent.getBroadcast(this, 1, intentPrevious, PendingIntent.FLAG_UPDATE_CURRENT);
 
 		NotificationCompat.WearableExtender extender = new NotificationCompat.WearableExtender()
-				.setContentIcon(R.drawable.ic_next)
+				//.setContentIcon(R.drawable.ic_launcher)
 				.setBackground(BitmapFactory.decodeResource(getResources(), item.getImg()))
 				.addAction(new NotificationCompat.Action.Builder(R.drawable.ic_next, getString(R.string.next), pendingIntentNext).build())
 				.addAction(new NotificationCompat.Action.Builder(R.drawable.ic_previous, getString(R.string.previous), pendingIntentPrevious).build())
