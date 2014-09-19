@@ -5,5 +5,10 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_list">List</string>
+	<string name="shared_prefs">com.example.vano.workoutplanreminder</string>
+	<string name="index">curr_index</string>
+	<string name="flag">flag</string>
+	<string name="next">Next</string>
+	<string name="previous">Previous</string>
 
 </resources>

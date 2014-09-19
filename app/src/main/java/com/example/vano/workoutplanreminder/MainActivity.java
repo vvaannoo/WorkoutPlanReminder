@@ -19,17 +19,21 @@ public class MainActivity extends Activity {
 		View stopBtn = findViewById(R.id.stop_btn);
 		View listBtn = findViewById(R.id.list_btn);
 
-		final Intent intent = new Intent(me, MyService.class);
+
 		startBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				Intent intent = new Intent(getBaseContext(), MyService.class);
+				intent.putExtra(getString(R.string.flag), 0);
 				startService(intent);
+			//	me.finish();
 			}
 		});
 
 		stopBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				Intent intent = new Intent(getBaseContext(), MyService.class);
 				stopService(intent);
 			}
 		});

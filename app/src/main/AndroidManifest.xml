@@ -24,9 +24,13 @@
         </service>
 
         <receiver
-            android:name="com.example.vano.workoutplanreminder.MyBroadcastReceiver"
+            android:name=".MyNextReceiver"
             android:exported="false" >
         </receiver>
+		<receiver
+			android:name=".MyPreviousReceiver"
+			android:exported="false" >
+		</receiver>
 
         <activity
             android:name="com.example.vano.workoutplanreminder.ListActivity"
