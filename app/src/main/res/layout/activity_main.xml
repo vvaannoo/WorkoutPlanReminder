@@ -14,11 +14,16 @@
 		android:id="@+id/start_btn"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:text="start reminder"/>
+		android:text="Start Session"/>
 	<Button
 		android:id="@+id/stop_btn"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:text="stop reminder"/>
+		android:text="Stop Session"/>
+	<Button
+		android:id="@+id/list_btn"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="Edit List"/>
 
 </LinearLayout>
