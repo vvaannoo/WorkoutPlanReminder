@@ -34,30 +34,31 @@ public class MyService extends Service {
 		currIndex = preferences.getInt(getString(R.string.index), 0);
 
 		Toast.makeText(this, "ind: " + currIndex, Toast.LENGTH_SHORT).show();
-		list = new ArrayList<Item>();
-		System.out.println("service started <-----------------------");
+//		list = new ArrayList<Item>();
+//		System.out.println("service started <-----------------------");
+//
+//		list.add(new Item(1, "Barbell Speed Squat", "Sets: 2, Reps: 15 (lite)", R.drawable.ic_barbell_speed_squat));
+//		list.add(new Item(2, "Abductor", "Sets: 2, Reps: 12", R.drawable.ic_abductor));
+//		list.add(new Item(3, "Adductor", "Sets: 2, Reps: 12", R.drawable.ic_adductor));
+//		list.add(new Item(4, "BodyWeight Standing Calf Raise", "Sets: 1, Reps: 15", R.drawable.ic_bodyweight_standing_calf_raise));
+//		list.add(new Item(5, "Barbell Bench Press", "Sets: 1, Reps: 20 (lite)", R.drawable.ic_barbell_bench_press));
+//		list.add(new Item(6, "Barbell Bench Press", "Sets: 1, Reps: 12 (lite)", R.drawable.ic_barbell_bench_press));
+//		list.add(new Item(7, "Barbell Bench Press", "Sets: 2, Reps: 10", R.drawable.ic_barbell_bench_press));
+//		list.add(new Item(8, "Pectoral Machine", "Sets: 1, Reps: 15 (lite)", R.drawable.ic_pectoral_machine));
+//		list.add(new Item(9, "Pectoral Machine", "Sets: 2, Reps: 12", R.drawable.ic_pectoral_machine));
+//		list.add(new Item(10, "Shoulder Press", "Sets: 1, Reps: 12 (lite)", R.drawable.ic_shoulder_press));
+//		list.add(new Item(11, "Shoulder Press", "Sets: 2, Reps: 10", R.drawable.ic_shoulder_press));
+//		list.add(new Item(12, "Delts machine", "Sets: 2, Reps: 12", R.drawable.ic_delts_machine));
+//		list.add(new Item(13, "Vertical Traction", "Sets: 2, Reps: 12", R.drawable.ic_vertical_traction));
+//		list.add(new Item(14, "Low Row", "Sets: 1, Reps: 12", R.drawable.ic_low_row));
+//		list.add(new Item(15, "Low Row", "Sets: 1, Reps: 10 (Each Hand)", R.drawable.ic_low_row));
+//		list.add(new Item(16, "Biceps", "Sets: 2, Reps: 10", R.drawable.ic_biceps));
+//		list.add(new Item(17, "Triceps", "Sets: 2, Reps: 10", R.drawable.ic_triceps));
+//		list.add(new Item(18, "Abs", "Sets: 2, Reps: 12", R.drawable.ic_abs));
 
-		list.add(new Item("Barbell Speed Squat", "Sets: 2, Reps: 15 (lite)", R.drawable.ic_barbell_speed_squat));
-		list.add(new Item("Abductor", "Sets: 2, Reps: 12", R.drawable.ic_abductor));
-		list.add(new Item("Adductor", "Sets: 2, Reps: 12", R.drawable.ic_adductor));
-		list.add(new Item("BodyWeight Standing Calf Raise", "Sets: 1, Reps: 15", R.drawable.ic_bodyweight_standing_calf_raise));
-		list.add(new Item("Barbell Bench Press", "Sets: 1, Reps: 20 (lite)", R.drawable.ic_barbell_bench_press));
-		list.add(new Item("Barbell Bench Press", "Sets: 1, Reps: 12 (lite)", R.drawable.ic_barbell_bench_press));
-		list.add(new Item("Barbell Bench Press", "Sets: 2, Reps: 10", R.drawable.ic_barbell_bench_press));
-		list.add(new Item("Pectoral Machine", "Sets: 1, Reps: 15 (lite)", R.drawable.ic_pectoral_machine));
-		list.add(new Item("Pectoral Machine", "Sets: 2, Reps: 12", R.drawable.ic_pectoral_machine));
-		list.add(new Item("Shoulder Press", "Sets: 1, Reps: 12 (lite)", R.drawable.ic_shoulder_press));
-		list.add(new Item("Shoulder Press", "Sets: 2, Reps: 10", R.drawable.ic_shoulder_press));
-		list.add(new Item("Delts machine", "Sets: 2, Reps: 12", R.drawable.ic_delts_machine));
-		list.add(new Item("Vertical Traction", "Sets: 2, Reps: 12", R.drawable.ic_vertical_traction));
-		list.add(new Item("Low Row", "Sets: 1, Reps: 12", R.drawable.ic_low_row));
-		list.add(new Item("Low Row", "Sets: 1, Reps: 10 (Each Hand)", R.drawable.ic_low_row));
-		list.add(new Item("Biceps", "Sets: 2, Reps: 10", R.drawable.ic_biceps));
-		list.add(new Item("Triceps", "Sets: 2, Reps: 10", R.drawable.ic_triceps));
-		list.add(new Item("Abs", "Sets: 2, Reps: 12", R.drawable.ic_abs));
-		list.add(new Item("Upper Leg", "Sets: 1, Reps: 12 (lite)", R.drawable.ic_upper_leg));
-		list.add(new Item("Upper Leg", "Sets: 2, Reps: 10", R.drawable.ic_upper_leg));
 
+		FileMng fileMng = FileMng.getInstance(this);
+		list = FileMng.buildObject(fileMng.readFromFile());
 	}
 
 	@Override

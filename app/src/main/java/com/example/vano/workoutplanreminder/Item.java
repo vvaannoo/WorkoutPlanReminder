@@ -5,14 +5,24 @@ package com.example.vano.workoutplanreminder;
  */
 public class Item {
 
+	private long id;
 	private String title;
 	private String text;
 	private int img;
 
-	public Item(String title, String text, int img){
+	public Item(long id, String title, String text, int img){
+		this.id = id;
 		this.title = title;
 		this.text = text;
 		this.img = img;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getTitle() {

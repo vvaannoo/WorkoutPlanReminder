@@ -2,12 +2,22 @@ package com.example.vano.workoutplanreminder;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 
 public class ListActivity extends Activity {
@@ -16,13 +26,15 @@ public class ListActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-		View table = findViewById(R.id.list);
-		ArrayList<View> children = new ArrayList();
-		LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+		ListView listView = (ListView) findViewById(R.id.list);
 
-		View child = inflater.inflate(R.layout.activity_list, null);
-		children.add(child);
-		table.addChildrenForAccessibility(children);
+		FileMng fileMng = FileMng.getInstance(getApplicationContext());
+		fileMng.createOrGetFile();
+		List<Item> data = FileMng.buildObject(fileMng.readFromFile());
+
+
+		LazyAdapter adapter = new LazyAdapter(this, data);
+		listView.setAdapter(adapter);
     }
 
 
