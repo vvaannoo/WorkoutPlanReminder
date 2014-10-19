@@ -7,8 +7,8 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="/mnt/92B242FAB242E279/projects/AndroidStudioProjects/WorkoutPlanReminder" />
+            <option value="/mnt/92B242FAB242E279/projects/AndroidStudioProjects/WorkoutPlanReminder/app" />
           </set>
         </option>
       </GradleProjectSettings>

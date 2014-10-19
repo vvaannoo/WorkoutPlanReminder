@@ -58,34 +58,46 @@ public class MainActivity extends Activity {
 
 		List list = new ArrayList<Item>();
 
-		list.add(new Item(1, "Barbell Speed Squat", "Sets: 2, Reps: 15 (lite)", R.drawable.ic_barbell_speed_squat));
-		list.add(new Item(2, "Abductor", "Sets: 2, Reps: 12", R.drawable.ic_abductor));
-		list.add(new Item(3, "Adductor", "Sets: 2, Reps: 12", R.drawable.ic_adductor));
-		list.add(new Item(4, "BodyWeight Standing Calf Raise", "Sets: 1, Reps: 15", R.drawable.ic_bodyweight_standing_calf_raise));
-		list.add(new Item(5, "Barbell Bench Press", "Sets: 1, Reps: 20 (lite)", R.drawable.ic_barbell_bench_press));
-		list.add(new Item(6, "Barbell Bench Press", "Sets: 1, Reps: 12 (lite)", R.drawable.ic_barbell_bench_press));
-		list.add(new Item(7, "Barbell Bench Press", "Sets: 2, Reps: 10", R.drawable.ic_barbell_bench_press));
-		list.add(new Item(8, "Pectoral Machine", "Sets: 1, Reps: 15 (lite)", R.drawable.ic_pectoral_machine));
-		list.add(new Item(9, "Pectoral Machine", "Sets: 2, Reps: 12", R.drawable.ic_pectoral_machine));
-		list.add(new Item(10, "Shoulder Press", "Sets: 1, Reps: 12 (lite)", R.drawable.ic_shoulder_press));
-		list.add(new Item(11, "Shoulder Press", "Sets: 2, Reps: 10", R.drawable.ic_shoulder_press));
-		list.add(new Item(12, "Delts machine", "Sets: 2, Reps: 12", R.drawable.ic_delts_machine));
-		list.add(new Item(13, "Vertical Traction", "Sets: 2, Reps: 12", R.drawable.ic_vertical_traction));
-		list.add(new Item(14, "Low Row", "Sets: 1, Reps: 12", R.drawable.ic_low_row));
-		list.add(new Item(15, "Low Row", "Sets: 1, Reps: 10 (Each Hand)", R.drawable.ic_low_row));
-		list.add(new Item(16, "Biceps", "Sets: 2, Reps: 10", R.drawable.ic_biceps));
-		list.add(new Item(17, "Triceps", "Sets: 2, Reps: 10", R.drawable.ic_triceps));
-		list.add(new Item(18, "Abs", "Sets: 2, Reps: 12", R.drawable.ic_abs));
+		list.add(new Item(1, "Barbell Bench Press (lite)", "1x20", R.drawable.ic_barbell_bench_press));
+		list.add(new Item(2, "Barbell Bench Press", "3x10/8", R.drawable.ic_barbell_bench_press));
+		list.add(new Item(3, "Pectoral Machine (lite)", "1x15", R.drawable.ic_pectoral_machine));
+		list.add(new Item(4, "Pectoral Machine", "3x10/12", R.drawable.ic_pectoral_machine));
+		list.add(new Item(5, "Barbell incline Bench Press (lite)", "1x10", R.drawable.ic_barbell_incline_bench_press));
+		list.add(new Item(6, "Barbell incline Bench Press", "2x10/8", R.drawable.ic_barbell_incline_bench_press));
+		list.add(new Item(7, "Shoulder Press (lite)", "1x10", R.drawable.ic_shoulder_press));
+		list.add(new Item(8, "Shoulder Press", "2/3x10/8", R.drawable.ic_shoulder_press));
+		list.add(new Item(9, "Delts machine", "5x10/12", R.drawable.ic_delts_machine));
+		list.add(new Item(10, "Triceps", "2x10", R.drawable.ic_triceps));
+		list.add(new Item(11, "Abs", "1x30", R.drawable.ic_abs));
+		list.add(new Item(12, "Abs Legs", "1x20", R.drawable.ic_abs_legs));
+
+		list.add(new Item(-1, "", "", R.drawable.ic_launcher));
+
+		list.add(new Item(1, "Barbell Speed Squat (lite)", "1x15", R.drawable.ic_barbell_speed_squat));
+		list.add(new Item(2, "Barbell Speed Squat", "3x10", R.drawable.ic_barbell_speed_squat));
+		list.add(new Item(3, "Leg Curl (lite)", "1x10", R.drawable.ic_leg_curl));
+		list.add(new Item(4, "Leg Curl", "2x10", R.drawable.ic_leg_curl));
+		list.add(new Item(5, "BodyWeight Standing Calf Raise", "1x15, Each Leg: 1x10", R.drawable.ic_bodyweight_standing_calf_raise));
+		list.add(new Item(6, "Vertical Traction (lite)", "1x12", R.drawable.ic_vertical_traction));
+		list.add(new Item(7, "Vertical Traction", "3x10", R.drawable.ic_vertical_traction));
+		list.add(new Item(8, "Pulley (lite)", "1x10", R.drawable.ic_pulley));
+		list.add(new Item(9, "Pulley", "3x10", R.drawable.ic_pulley));
+		list.add(new Item(10, "Pull Down", "2x12", R.drawable.ic_pull_down));
+		list.add(new Item(11, "Biceps (lite)", "1x10", R.drawable.ic_biceps));
+		list.add(new Item(12, "Biceps", "3x10", R.drawable.ic_biceps));
+		list.add(new Item(13, "Abs", "1x30", R.drawable.ic_abs));
+		list.add(new Item(14, "Abs Legs", "1x20", R.drawable.ic_abs_legs));
+
 
 		fileMng.writeInFile(FileMng.buildFileContent(list));
 
-		List<String> lines = fileMng.readFromFile();
-
-		List<Item> items = FileMng.buildObject(lines);
-
-		for(Item item : items){
-			System.out.println( item.getTitle());
-		}
+//		List<String> lines = fileMng.readFromFile();
+//
+//		List<Item> items = FileMng.buildObject(lines);
+//
+//		for(Item item : items){
+//			System.out.println( item.getTitle());
+//		}
 
     }
 

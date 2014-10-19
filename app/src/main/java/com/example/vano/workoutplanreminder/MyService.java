@@ -11,9 +11,7 @@ import android.graphics.BitmapFactory;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
-import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MyService extends Service {
@@ -33,7 +31,7 @@ public class MyService extends Service {
 
 		currIndex = preferences.getInt(getString(R.string.index), 0);
 
-		Toast.makeText(this, "ind: " + currIndex, Toast.LENGTH_SHORT).show();
+		//Toast.makeText(this, "ind: " + currIndex, Toast.LENGTH_SHORT).show();
 //		list = new ArrayList<Item>();
 //		System.out.println("service started <-----------------------");
 //
@@ -68,7 +66,7 @@ public class MyService extends Service {
 		if(intent != null){
 			flag = intent.getIntExtra(getString(R.string.flag), -100);
 		}
-		Toast.makeText(this, "flag: " + flag, Toast.LENGTH_SHORT).show();
+		//Toast.makeText(this, "flag: " + flag, Toast.LENGTH_SHORT).show();
 
 		if(flag == -100){
 			return super.onStartCommand(intent, flags, startId);
@@ -76,8 +74,16 @@ public class MyService extends Service {
 			currIndex = preferences.getInt(getString(R.string.index), 0);
 			currIndex += flag;
 			SharedPreferences.Editor editor = preferences.edit();
+
 			if(currIndex >= list.size()){
 				editor.remove(getString(R.string.index));
+				editor.commit();
+				exit();
+				return super.onStartCommand(intent, flags, startId);
+			}
+			Item item = list.get(currIndex);
+			if(item.getTitle().isEmpty()){
+				editor.putInt(getString(R.string.index), currIndex+1);
 				editor.commit();
 				exit();
 				return super.onStartCommand(intent, flags, startId);
@@ -102,7 +108,7 @@ public class MyService extends Service {
 
 		System.out.println("notify " + currIndex);
 		Item item = list.get(currIndex);
-		String title = (currIndex + 1) + ". " + item.getTitle();
+		String title = item.getId() + ". " + item.getTitle();
 
 		Intent intentNext = new Intent(this, MyNextReceiver.class);
 		Intent intentPrevious = new Intent(this, MyPreviousReceiver.class);
@@ -127,6 +133,7 @@ public class MyService extends Service {
 				.setTicker(title + ": " + item.getText())
 				.setSmallIcon(R.drawable.ic_launcher)
 				.extend(extender)
+				//.setOngoing(true)
 				.setStyle(new NotificationCompat.BigPictureStyle()
 						.bigPicture(BitmapFactory.decodeResource(getResources(), item.getImg()))
 						.setSummaryText(item.getText()))

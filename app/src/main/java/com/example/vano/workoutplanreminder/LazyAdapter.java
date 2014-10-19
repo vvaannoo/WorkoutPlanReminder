@@ -2,7 +2,6 @@ package com.example.vano.workoutplanreminder;
 
 import android.app.Activity;
 import android.content.Context;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -55,9 +52,9 @@ public class LazyAdapter extends BaseAdapter {
 		TextView contentView = (TextView) vi.findViewById(R.id.content);
 		Integer imageId = data.get(position).getImg();
 		imageId = FileMng.getThumb(imageId);
-		if(imageId != null)
-			imageView.setImageDrawable(activity.getResources().getDrawable(imageId));
-		titleView.setText( data.get(position).getTitle());
+		if(imageId == null) imageId = data.get(position).getImg();
+		imageView.setImageDrawable(activity.getResources().getDrawable(imageId));
+		titleView.setText( data.get(position).getId() + ". " + data.get(position).getTitle());
 		contentView.setText( data.get(position).getText());
 
 		return vi;

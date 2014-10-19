@@ -40,7 +40,18 @@ public class FileMng {
 		imgThumbMap.put(R.drawable.ic_barbell_bench_press, R.drawable.th_ic_barbell_bench_press);
 		imgThumbMap.put(R.drawable.ic_barbell_speed_squat, R.drawable.th_ic_barbell_speed_squat);
 		imgThumbMap.put(R.drawable.ic_biceps, R.drawable.th_ic_biceps);
+		imgThumbMap.put(R.drawable.ic_abs_legs, R.drawable.th_ic_abs_legs);
+		imgThumbMap.put(R.drawable.ic_barbell_incline_bench_press, R.drawable.th_ic_barbell_incline_bench_press);
+		imgThumbMap.put(R.drawable.ic_leg_curl, R.drawable.th_ic_leg_curl);
+		imgThumbMap.put(R.drawable.ic_pull_down, R.drawable.th_ic_pull_down);
+		imgThumbMap.put(R.drawable.ic_pulley, R.drawable.th_ic_pulley);
+		imgThumbMap.put(R.drawable.ic_pectoral_machine, R.drawable.th_ic_pectoral_machine);
+		imgThumbMap.put(R.drawable.ic_shoulder_press, R.drawable.th_ic_shoulder_press);
+		imgThumbMap.put(R.drawable.ic_delts_machine, R.drawable.th_ic_delts_machine);
+		imgThumbMap.put(R.drawable.ic_triceps, R.drawable.th_ic_triceps);
+		imgThumbMap.put(R.drawable.ic_vertical_traction, R.drawable.th_ic_vertical_traction);
 		imgThumbMap.put(R.drawable.ic_bodyweight_standing_calf_raise, R.drawable.th_ic_bodyweight_standing_calf_raise);
+
 	}
 
 	public boolean writeInFile(String str){
