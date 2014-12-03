@@ -6,8 +6,13 @@
 		<item name="android:colorPrimaryDark">@color/material_indigo_700</item>
 		<item name="android:textColorPrimary">@color/text_color</item>
 		<item name="android:colorAccent">@color/material_red_A500</item>
-
+		<item name="android:itemTextAppearance">@style/ItemTextAppearance</item>
+		<item name="android:actionMenuTextColor">@color/action_text_color</item>
         <!-- Customize your theme here. -->
     </style>
+
+	<style name="ItemTextAppearance">
+		<item name="android:textColor">@color/action_text_color</item>
+	</style>
 
 </resources>
