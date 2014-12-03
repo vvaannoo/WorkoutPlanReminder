@@ -110,12 +110,13 @@ public class MyService extends Service {
 		Item item = list.get(currIndex);
 		String title = item.getId() + ". " + item.getTitle();
 
+		Intent mainActivity = new Intent(this.getApplicationContext(), MainActivity.class);
 		Intent intentNext = new Intent(this, MyNextReceiver.class);
 		Intent intentPrevious = new Intent(this, MyPreviousReceiver.class);
 		intentNext.putExtra(getString(R.string.flag), 1);
 		intentPrevious.putExtra(getString(R.string.flag), -1);
+		PendingIntent pendingIntentMainActivity = PendingIntent.getActivity(this.getApplicationContext(), 0, mainActivity, PendingIntent.FLAG_UPDATE_CURRENT);
 		PendingIntent pendingIntentNext = PendingIntent.getBroadcast(this, 1, intentNext, PendingIntent.FLAG_UPDATE_CURRENT);
-
 		PendingIntent pendingIntentPrevious = PendingIntent.getBroadcast(this, 1, intentPrevious, PendingIntent.FLAG_UPDATE_CURRENT);
 
 		NotificationCompat.WearableExtender extender = new NotificationCompat.WearableExtender()
@@ -133,6 +134,7 @@ public class MyService extends Service {
 				.setTicker(title + ": " + item.getText())
 				.setSmallIcon(R.drawable.ic_launcher)
 				.extend(extender)
+				.setContentIntent(pendingIntentMainActivity)
 				//.setOngoing(true)
 				.setStyle(new NotificationCompat.BigPictureStyle()
 						.bigPicture(BitmapFactory.decodeResource(getResources(), item.getImg()))

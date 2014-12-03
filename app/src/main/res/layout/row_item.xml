@@ -2,10 +2,10 @@
 <LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
 			   android:layout_width="fill_parent"
 			   android:layout_height="wrap_content"
-			   android:padding="5dp">
+			   android:padding="10dp">
 	<ImageView
 		android:id="@+id/photo"
-		android:layout_width="70dp"
+		android:layout_width="80dp"
 		android:layout_height="50dp"/>
 	<LinearLayout
 		android:layout_width="match_parent"
@@ -23,7 +23,8 @@
 			android:textAlignment="gravity"
 			android:gravity="center_vertical"
 			android:layout_weight="1"
-			android:text="asdfasdfasdfsadf"
+			android:textStyle="bold"
+			android:text="Title"
 			/>
 		<TextView
 			android:id="@+id/content"
@@ -32,7 +33,7 @@
 			android:textAlignment="gravity"
 			android:gravity="center_vertical"
 			android:layout_weight="1"
-			android:text="asdfasdfaswer"
+			android:text="Content"
 			/>
 
 	</LinearLayout>

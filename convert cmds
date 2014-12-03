@@ -1,0 +1,4 @@
+for f in *.jpg; do convert -resize 400x400 -gravity Center -crop 300x300+0+0 +repage ./$f ./ic/$f; done
+
+for f in *.jpg; do convert -resize 120x120 $f ../th/th_$f; done
+

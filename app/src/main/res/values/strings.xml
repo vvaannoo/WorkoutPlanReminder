@@ -11,5 +11,6 @@
 	<string name="next">Next</string>
 	<string name="previous">Previous</string>
 	<string name="file_name">plan</string>
+	<string name="show_list">Show List</string>
 
 </resources>
